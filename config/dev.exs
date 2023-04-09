@@ -61,6 +61,7 @@ config :chat_app, ChatAppWeb.Endpoint,
       ~r"lib/chat_app_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
+  
 
 # Enable dev routes for dashboard and mailbox
 config :chat_app, dev_routes: true

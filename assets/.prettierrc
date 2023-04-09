@@ -1,0 +1,19 @@
+{
+	"printWidth": 130,
+	"eexMultilineLineLength": 100,
+	"eexMultilineNoParens": ["link", "form_for"],
+	"useTabs": true,
+	"tabWidth": 4,
+	"overrides": [
+		{
+			"files": "*.html.heex",
+			"options": {
+				"printWidth": 130,
+				"eexMultilineLineLength": 100,
+				"eexMultilineNoParens": ["link", "form_for"],
+				"useTabs": true,
+				"tabWidth": 4
+			}
+		}
+	]
+}
