@@ -1,6 +1,6 @@
 // If you want to use Phoenix channels, run `mix help phx.gen.channel`
 // to get started and then uncomment the line below.
-// import "./user_socket.js"
+import "./user_socket.js"
 
 // You can include dependencies in two ways.
 //
@@ -24,6 +24,27 @@ import topbar from "../vendor/topbar";
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content");
 let liveSocket = new LiveSocket("/live", Socket, { params: { _csrf_token: csrfToken } });
+
+const WEBSOCKET_URL = "/socket";
+
+let socket = new Socket(WEBSOCKET_URL);
+socket.connect();
+
+let channel = socket.channel("chat:lobby", {});
+
+channel.join()
+    .receive("ok", resp => { console.log("Joined successfully", resp) })
+    .receive("error", resp => { console.log("Unable to join", resp) });
+
+function sendMessage(content){
+    channel.push("new_message", {content: content})
+}
+
+channel.on("new_message", payload => {
+    console.log("Received new message: ", payload.message)
+})
+
+export {sendMessage}
 
 // Show progress bar on live navigation and form submits
 topbar.config({ barColors: { 0: "#29d" }, shadowColor: "rgba(0, 0, 0, .3)" });
