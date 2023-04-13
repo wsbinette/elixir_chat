@@ -1,7 +1,7 @@
 defmodule ChatAppWeb.ChatChannel do
   use ChatAppWeb, :channel
 
-  alias ChatApp.{Repo, Message}
+  alias ChatApp.{Message}
 
   @impl true
   def join("chat:lobby", _message, socket) do
@@ -58,7 +58,7 @@ defmodule ChatAppWeb.ChatChannel do
   end
 
   # Add authorization logic here as required.
-  defp authorized?(_payload) do
-    true
-  end
+  # defp authorized?(_payload) do
+  #   true
+  # end
 end
