@@ -74,3 +74,28 @@ defmodule ChatApp.MixProject do
     ]
   end
 end
+
+
+# channels
+# - chat_channel.ex
+# - user_socket.ex
+
+# components
+# - layouts
+# -- app.html.heex
+# -- root.html.leex
+# - core_components.ex
+# - layouts.ex
+
+# controllers
+# - page_html
+# -- home.html.heex
+# - error_html.ex
+# - error_json.ex
+# - page_controller.ex
+# - page_html.ex
+
+# endpoint.ex
+# gettext.ex
+# router.ex
+# telemetry.ex
