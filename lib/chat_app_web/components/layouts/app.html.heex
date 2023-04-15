@@ -5,7 +5,7 @@
         <img src={~p"/images/logo.svg"} width="36" />
       </a>
       <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
-        v<%= Application.spec(:phoenix, :vsn) %>
+      <%= assigns[:page_title] || "Phoenix Chat" %> | v1.0.0
       </p>
     </div>
     <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
@@ -19,7 +19,7 @@
         href="https://hexdocs.pm/phoenix/overview.html"
         class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
       >
-        Get Started <span aria-hidden="true">&rarr;</span>
+       Phoenix Docs <span aria-hidden="true">&rarr;</span>
       </a>
     </div>
   </div>
